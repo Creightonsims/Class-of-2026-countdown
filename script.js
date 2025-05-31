@@ -1,46 +1,24 @@
-body {
-  background-color: #0a0a23;
-  color: #ffffff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
-  padding-top: 60px;
-  margin: 0;
+const targetDate = new Date("May 20, 2025 20:00:00 GMT-0500").getTime();
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  if (distance < 0) {
+    document.getElementById("countdown").innerHTML = "🎉 It's time!";
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("days").textContent = days.toString().padStart(2, "0");
+  document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+  document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+  document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
 }
 
-.container {
-  max-width: 700px;
-  margin: auto;
-  padding: 20px;
-}
-
-h1 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-#countdown {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  font-size: 2rem;
-}
-
-#countdown div {
-  background: #1c1c3a;
-  padding: 25px 20px;
-  border-radius: 12px;
-  min-width: 80px;
-}
-
-#countdown span {
-  display: block;
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
-#countdown small {
-  display: block;
-  font-size: 0.9rem;
-  color: #aaa;
-  margin-top: 5px;
-}
+setInterval(updateCountdown, 1000);
+updateCountdown();
