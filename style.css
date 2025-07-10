@@ -1,60 +1,82 @@
+
 body {
-  background-color: #0a1a33; /* Navy */
-  color: #ffd700; /* Gold */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  text-align: center;
   margin: 0;
   padding: 0;
+  background-color: #0a1a33;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .container {
-  max-width: 600px;
-  margin: auto;
-  padding: 60px 20px;
+  padding: 20px;
+  max-width: 90%;
+  z-index: 2;
+  position: relative;
 }
 
 h1 {
   font-size: 2.5rem;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 1.2rem;
+  font-weight: 600;
   margin-bottom: 40px;
-  color: #ffffffaa;
+  color: #ffd700;
 }
 
 .countdown {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 15px;
 }
 
 .time-block {
-  background: #13294b;
+  background-color: #112244;
   padding: 20px;
-  border-radius: 15px;
-  min-width: 100px;
-  box-shadow: 0 0 15px #ffd70044;
+  border-radius: 10px;
+  min-width: 90px;
 }
 
 .time-block span {
   display: block;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: bold;
-  color: #ffd700;
+  color: #ffffff;
 }
 
 .time-block label {
-  margin-top: 8px;
-  display: block;
   font-size: 0.9rem;
-  color: #ffffffcc;
+  color: #cccccc;
+  margin-top: 5px;
 }
 
 #message {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffd700;
   margin-top: 30px;
-  font-size: 1.5rem;
-  color: #ffffff;
+}
+
+footer {
+  position: fixed;
+  bottom: 15px;
+  right: 20px;
+  font-size: 0.9rem;
+  color: #999999;
+  z-index: 2;
+}
+
+#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
 }

@@ -1,11 +1,18 @@
-const targetDate = new Date("May 20, 2026 20:00:00 GMT-0500").getTime();
+
+const targetDate = new Date("2026-05-23T20:00:00-05:00").getTime();
+let confettiStarted = false;
 
 function updateCountdown() {
   const now = new Date().getTime();
   const distance = targetDate - now;
 
-  if (distance < 0) {
-    document.getElementById("countdown").innerHTML = "🎉 It's time!";
+  if (distance <= 0) {
+    document.getElementById("countdown").style.display = "none";
+    document.getElementById("message").innerHTML = "🎉 We did it!";
+    if (!confettiStarted) {
+      confetti.start();
+      confettiStarted = true;
+    }
     return;
   }
 
@@ -13,12 +20,14 @@ function updateCountdown() {
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  const milliseconds = Math.floor(distance % 1000);
 
   document.getElementById("days").textContent = days.toString().padStart(2, "0");
   document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
   document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
   document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+  document.getElementById("milliseconds").textContent = milliseconds.toString().padStart(3, "0");
 }
 
-setInterval(updateCountdown, 1000);
+setInterval(updateCountdown, 50);
 updateCountdown();

@@ -3,33 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Class of 2026 Countdown</title>
+  <title>Countdown to Graduation</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>Graduation countdown</h1>
-    <p>Counting down to June 10, 2025 @ 8PM CST</p>
-    <div class="countdown">
-      <div class="time-block">
-        <span id="days">00</span>
-        <label>Days</label>
-      </div>
-      <div class="time-block">
-        <span id="hours">00</span>
-        <label>Hours</label>
-      </div>
-      <div class="time-block">
-        <span id="minutes">00</span>
-        <label>Minutes</label>
-      </div>
-      <div class="time-block">
-        <span id="seconds">00</span>
-        <label>Seconds</label>
-      </div>
+    <h1>Countdown to Graduation</h1>
+    <div class="countdown" id="countdown">
+      <div class="time-block"><span id="days">00</span><label>Days</label></div>
+      <div class="time-block"><span id="hours">00</span><label>Hours</label></div>
+      <div class="time-block"><span id="minutes">00</span><label>Minutes</label></div>
+      <div class="time-block"><span id="seconds">00</span><label>Seconds</label></div>
+      <div class="time-block"><span id="milliseconds">000</span><label>ms</label></div>
     </div>
     <div id="message"></div>
+    <footer>Creighton Sims</footer>
   </div>
+  <canvas id="confetti-canvas"></canvas>
+  <script src="confetti.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
