@@ -2,8 +2,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #ffffff;
-  color: #0a1a33;
+  background-color: #0a1a33;
+  color: #ffffff;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@ h1 {
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 40px;
-  color: #0a1a33;
+  color: #61dafb; /* soft blue */
 }
 
 .countdown {
@@ -33,19 +33,22 @@ h1 {
 }
 
 .time-block {
-  min-width: 80px;
+  background-color: #13294b;
+  padding: 20px;
+  border-radius: 10px;
+  min-width: 90px;
 }
 
 .time-block span {
   display: block;
   font-size: 2.5rem;
   font-weight: 700;
-  color: #ffd700;
+  color: #ffffff;
 }
 
 .time-block label {
   font-size: 0.9rem;
-  color: #0a1a33;
+  color: #dddddd;
   margin-top: 4px;
 }
 
@@ -53,7 +56,7 @@ h1 {
   margin-top: 30px;
   font-size: 1.8rem;
   font-weight: bold;
-  color: #0a1a33;
+  color: #61dafb;
 }
 
 footer {
@@ -61,7 +64,7 @@ footer {
   bottom: 15px;
   right: 20px;
   font-size: 0.9rem;
-  color: #999999;
+  color: #cccccc;
 }
 
 #confetti-canvas {
